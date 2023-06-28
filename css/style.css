@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+
+:root {
+  --bgcolor: #fff;
+}
+
+body {
+  background-color: var(--bgcolor);
+}
