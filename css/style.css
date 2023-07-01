@@ -84,7 +84,10 @@ header nav .menu-icon svg {
   color: white;
   cursor: pointer;
   font-size: 25px;
+  transition: .3s;
 }
+
+header nav .menu-icon svg:hover { color: var(--main-color) }
 
 header nav ul { display: none }
 
@@ -94,7 +97,9 @@ header nav ul { display: none }
 }
 
 @media (max-width: 768px) {
-  header nav .menu-icon:hover + ul {
+  header nav .menu-icon:hover + ul,
+  header nav .menu-icon + ul:hover
+  {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -103,9 +108,19 @@ header nav ul { display: none }
     width: 100%;
     background-color: #00000080;
   }
+  header nav .menu-icon + ul::after {
+    content: "";
+    position: absolute;
+    --height: 45px;
+    width: 200px;
+    height: var(--height);
+    top: calc(var(--height) / -1);
+    right: 0;
+  }
   header nav ul li a {
-    padding: 15px !important;
+    padding: 20px !important;
     transition: .3s;
+    height: fit-content !important;
   }
   header nav ul li:hover a {
     margin-left: 10px;
@@ -149,6 +164,20 @@ header nav .search-icon {
   position: relative;
 }
 
+header nav .search-icon::before {
+  content: "";
+  background-color: var(--main-color);
+  height: 1px;
+  position: absolute;
+  bottom: -33px;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+}
+
+header nav .search-icon:hover::before { opacity: 1 }
+
 header nav .search-icon svg {
   color: white;
   position: absolute;
@@ -157,4 +186,7 @@ header nav .search-icon svg {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  transition: .3s;
 }
+
+header nav .search-icon svg:hover { color: var(--main-color) }
