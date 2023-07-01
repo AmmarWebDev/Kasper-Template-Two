@@ -22,6 +22,12 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
 header ul { list-style: none }
 
 .container {
@@ -52,6 +58,7 @@ header .container {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  min-height: 97px;
 }
 
 header .container::after {
@@ -73,8 +80,36 @@ header nav {
   justify-content: flex-end;
 }
 
-header nav ul {
-  display: flex;
+header nav .menu-icon svg {
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+header nav ul { display: none }
+
+@media (min-width: 768px) {
+  header nav .menu-icon svg { display: none }
+  header nav ul { display: flex }
+}
+
+@media (max-width: 768px) {
+  header nav .menu-icon:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #00000080;
+  }
+  header nav ul li a {
+    padding: 15px !important;
+    transition: .3s;
+  }
+  header nav ul li:hover a {
+    margin-left: 10px;
+  }
 }
 
 header nav ul li a {
@@ -87,6 +122,7 @@ header nav ul li a {
   transition: .3s;
   position: relative;
   z-index: 2;
+  height: 97px;
 }
 
 header nav ul li a::before {
