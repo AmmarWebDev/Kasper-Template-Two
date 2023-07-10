@@ -21,9 +21,7 @@
   background-color: var(--main-transparent-color);
 }
 
-ul {
-  list-style: none;
-}
+ul { list-style: none }
 
 html { scroll-behavior: smooth }
 
@@ -44,7 +42,7 @@ header {
   margin: auto;
 }
 /* Small */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .container { width: 750px }
 }
 /* Medium */
@@ -498,6 +496,8 @@ section#portfolio ul.shuffle {
   display: flex;
   justify-content: center;
   gap: 5px;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
 section#portfolio ul.shuffle li button,
@@ -533,6 +533,23 @@ section#portfolio .images div {
   position: relative;
   overflow: hidden;
   max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  section#portfolio .images div {
+    flex-basis: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  section#portfolio .images div {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1100px) {
+  section#portfolio .images div {
+    flex-basis: 25%;
+  }
 }
 
 section#portfolio .images div img {
