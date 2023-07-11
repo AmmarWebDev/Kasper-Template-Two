@@ -598,7 +598,6 @@ section#portfolio .images div article p { color: var(--main-color) }
 }
 
 section#video {
-  padding: var(--sect-padding);
   max-width: 100%;
   position: relative;
 }
@@ -648,4 +647,39 @@ section#video article button {
 section#video article button:hover {
   border-color: var(--bgcolor);
   background-color: transparent;
+}
+
+section#about {
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+section#about .nice-heading {
+  margin-top: 20px;
+}
+
+section#about p { margin-bottom: 0 }
+
+section#about img {
+  position: relative;
+  bottom: -250px;
+  width: 100%;
+}
+
+/* Very Small */
+@media (max-width: 769px) {
+  section#about img { bottom: -110px }
+}
+/* Small */
+@media (min-width: 769px) {
+  section#about img { bottom: -150px }
+}
+/* Medium */
+@media (min-width: 992px) {
+  section#about img { bottom: -150px }
+}
+/* Large */
+@media (min-width: 1200px) {
+  section#about img { bottom: -250px }
 }
