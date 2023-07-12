@@ -687,35 +687,69 @@ section#about p { margin-bottom: 0 }
 
 section#about img {
   position: relative;
-  width: 100%;
   max-width: 100%;
+  bottom: -60px;
+  margin: -60px;
 }
 
-/* Very Small */
-@media (max-width: 768px) {
+@media (max-width: 516px) {
   section#about img {
-    bottom: -40px;
-    margin: -40px;
+    bottom: -10px;
+    margin-top: -10px;
   }
 }
-/* Small */
+
+section#stats {
+  background-image: url("../svg/stats\ section\ background.svg");
+  background-size: cover;
+  background-color: #1f2021;
+  position: relative;
+  padding: var(--sect-padding);
+}
+
+section#stats .stats {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  color: var(--bgcolor);
+  text-align: center;
+  flex-wrap: wrap;
+  background-color: var(--main-transparent-color);
+}
+
+section#stats .stats .achieve {
+  flex-basis: 25%;
+  padding: 50px;
+}
+
+@media (max-width: 767px) {
+  section#stats .stats .achieve {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}
 @media (min-width: 768px) {
-  section#about img {
-    bottom: -60px;
-    margin: -60px;
+  section#stats .stats .achieve {
+    flex-basis: 50%;
   }
 }
-/* Medium */
 @media (min-width: 992px) {
-  section#about img {
-    bottom: -90px;
-    margin: -90px;
+  section#stats .stats .achieve {
+    flex-basis: 25%;
   }
 }
-/* Large */
-@media (min-width: 1200px) {
-  section#about img {
-    bottom: -100px;
-    margin: -100px;
-  }
+
+section#stats .stats .achieve svg {
+  background-color: black;
+  padding: 15px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
+
+section#stats .stats .achieve .no {
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+section#stats .stats .achieve p { text-transform: capitalize }
