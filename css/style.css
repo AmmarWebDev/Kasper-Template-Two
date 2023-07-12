@@ -622,6 +622,29 @@ section#video article {
   text-align: center;
 }
 
+@media (max-width: 379px) {
+  section#video article {
+    padding: 10px;
+  }
+  section#video article h2,
+  section#video article p
+  {
+    margin-bottom: 10px !important;
+  }
+}
+
+@media (min-width: 379px) {
+  section#video article {
+    padding: 30px;
+  }
+}
+
+@media (min-width: 511px) {
+  section#video article {
+    padding: 50px;
+  }
+}
+
 section#video article h2 {
   margin-bottom: 30px;
   text-transform: uppercase;
@@ -653,33 +676,46 @@ section#about {
   position: relative;
   overflow: hidden;
   margin-top: 100px;
+  text-align: center;
 }
 
 section#about .nice-heading {
-  margin-top: 20px;
+  margin: 20px 0 80px;
 }
 
 section#about p { margin-bottom: 0 }
 
 section#about img {
   position: relative;
-  bottom: -250px;
   width: 100%;
+  max-width: 100%;
 }
 
 /* Very Small */
-@media (max-width: 769px) {
-  section#about img { bottom: -110px }
+@media (max-width: 768px) {
+  section#about img {
+    bottom: -40px;
+    margin: -40px;
+  }
 }
 /* Small */
-@media (min-width: 769px) {
-  section#about img { bottom: -150px }
+@media (min-width: 768px) {
+  section#about img {
+    bottom: -60px;
+    margin: -60px;
+  }
 }
 /* Medium */
 @media (min-width: 992px) {
-  section#about img { bottom: -150px }
+  section#about img {
+    bottom: -90px;
+    margin: -90px;
+  }
 }
 /* Large */
 @media (min-width: 1200px) {
-  section#about img { bottom: -250px }
+  section#about img {
+    bottom: -100px;
+    margin: -100px;
+  }
 }
